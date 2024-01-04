@@ -1,25 +1,25 @@
-/target/
-!.mvn/wrapper/maven-wrapper.jar
+.env
+package-lock.json
+.vite-ssg-temp
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
 
-### IntelliJ IDEA ###
+*.log
+
+.vscode
 .idea
-*.iws
-*.iml
-*.ipr
 
-### NetBeans ###
-/nbproject/private/
-/build/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+tailwind.config.js
+src/components.d.ts
+
+stats.html
+
+*.zip
+
+
+
+

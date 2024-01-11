@@ -1,18 +1,26 @@
 import express, { Application } from "express";
 import Server from "./src/index";
+import ConfigService from "./src/config/config-service";
+import SupabaseListener from "./src/listener/supabase-listener";
+import logger from "./src/config/logger";
+import morgan from 'morgan';
 
 const app: Application = express();
 const server: Server = new Server(app);
-const PORT: number = process.env.PORT ? parseInt(process.env.PORT, 10) : 8090;
+const PORT = ConfigService.server.port;
+//启动supabase监听
+SupabaseListener;
+
+app.use(morgan('combined', { stream: { write: message => logger.info(message.trim()) } }));
 
 app
-  .listen(PORT, "localhost", function () {
-    console.log(`Server is running on port ${PORT}.`);
+  .listen(PORT, "::", function () {
+    logger.info(`Server is running on port ${PORT}.`);
   })
   .on("error", (err: any) => {
     if (err.code === "EADDRINUSE") {
-      console.log("Error: address already in use");
+      logger.error("Error: address already in use");
     } else {
-      console.log(err);
+      logger.error(err.message);
     }
   });

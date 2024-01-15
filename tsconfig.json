@@ -12,6 +12,8 @@
     /* Emit */
     "outDir": "./build",
 
+    "removeComments": true,
+    
     /* Interop Constraints */
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,

@@ -32,7 +32,9 @@ COMMENT ON COLUMN flows.name IS '流程名称';
 COMMENT ON COLUMN flows.call_type IS '调用类型 API ,API_CALLBACK';
 COMMENT ON COLUMN flows.description IS '流程描述'
 
-alter table flows enable row level security;
+alter table flows add column context json ;
+
+alter table flows  enable row level security;
 
 
 

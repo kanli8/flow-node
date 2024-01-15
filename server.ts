@@ -24,3 +24,5 @@ app
       logger.error(err.message);
     }
   });
+
+export default app;

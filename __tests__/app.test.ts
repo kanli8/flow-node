@@ -8,14 +8,18 @@ describe('Test Express App', () => {
     });
 
     afterAll((done) => {
-        app.off('listening', done);
+        //close the server
+        // app.close();
+        app.close(done);
     });
 
-    it('should return "Hello, World!"', async () => {
-        it('should return "Hello, World!"', async () => {
-            const response = await request(app).get('/');
-            expect(response.text).toBe('Hello, World!');
-        });
+
+    it('should return "Welcome to bezkoder application."', async () => {
+        const response = await request(app).get('/api');
+        // console.log(response.text);
+        
+        expect(response.body.message).toBe('Welcome to bezkoder application.');
     });
+
 });
 

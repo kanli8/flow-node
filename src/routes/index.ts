@@ -5,6 +5,6 @@ import flowRoutes from "./flow.routes";
 export default class Routes {
   constructor(app: Application) {
     app.use("/api", homeRoutes);
-    app.use("/flow", flowRoutes);
+    // app.use("/flow", flowRoutes);
   } 
 }

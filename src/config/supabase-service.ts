@@ -4,6 +4,7 @@ class SupabaseService {
 
     private supabase :SupabaseClient;
     constructor() {
+        // console.log(ConfigService.supabase.url, ConfigService.supabase.key);
         this.supabase = createClient(
             ConfigService.supabase.url,
             ConfigService.supabase.key

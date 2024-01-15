@@ -1,8 +1,11 @@
+import { log } from "console";
 import SupabaseService from "../config/supabase-service";
+import logger from "../config/logger";
+import { RealtimeChannel } from "@supabase/supabase-js";
 
 class SupabaseListener {
     private supabse = SupabaseService.client;
-    private changes :any;
+    private changes :RealtimeChannel;
     constructor() {
         
         this.changes = this.supabse
@@ -15,8 +18,8 @@ class SupabaseListener {
             table: 'node_instances',
             },
             (payload) => console.log(payload)
-        )
-        .subscribe()
+        ).subscribe();
+        logger.info("supabase监听启动:::"+this.changes.timeout);
     }
 
     public async unsubscribe(){

@@ -13,7 +13,7 @@ SupabaseListener;
 
 app.use(morgan('combined', { stream: { write: message => logger.info(message.trim()) } }));
 
-app
+const listenSertver = app
   .listen(PORT, "::", function () {
     logger.info(`Server is running on port ${PORT}.`);
   })
@@ -25,4 +25,6 @@ app
     }
   });
 
-export default app;
+
+
+export default listenSertver;

@@ -1,5 +1,6 @@
 import fs from 'fs';
 import yaml from 'js-yaml';
+import ejs from 'ejs';
 
 interface ServerConfig {
   port: number;
@@ -44,7 +45,8 @@ class ConfigService {
   private loadConfig() {
     try {
       const configFile = fs.readFileSync('config.yml', 'utf8');
-        this.config = yaml.load(configFile) as {
+      const configString = ejs.render(configFile);
+        this.config = yaml.load(configString) as {
             server: ServerConfig;
             database: DatabaseConfig; 
             supabase: SupabaseConfig;

@@ -56,5 +56,8 @@ select * from edges;
 
 
 
+select * from node_instances;
+
+
 
 

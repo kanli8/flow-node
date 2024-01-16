@@ -2,7 +2,7 @@ import { SupabaseClient, createClient } from "@supabase/supabase-js";
 import ConfigService from "./config-service";
 class SupabaseService {
 
-    private supabase :SupabaseClient;
+    supabase :SupabaseClient;
     constructor() {
         // console.log(ConfigService.supabase.url, ConfigService.supabase.key);
         this.supabase = createClient(

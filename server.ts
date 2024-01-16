@@ -8,7 +8,7 @@ import morgan from 'morgan';
 const app: Application = express();
 const server: Server = new Server(app);
 const PORT = ConfigService.server.port;
-//启动supabase监听
+//start supabase listener
 SupabaseListener;
 
 app.use(morgan('combined', { stream: { write: message => logger.info(message.trim()) } }));
